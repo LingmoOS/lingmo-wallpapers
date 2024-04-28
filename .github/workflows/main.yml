@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build Tarball
+        run: |
+          mkdir -p lingmo-wallpapers
+          cp -R $(ls | grep -xv lingmo-wallpapers) lingmo-wallpapers/
+          tar -cJf lingmo-wallpapers.tar.xz lingmo-wallpapers
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+            files: lingmo-wallpapers.tar.xz
+            name: Release ${{ github.ref }}
+
+      - name: Cleanup
+        run: rm lingmo-wallpapers.tar.xz
