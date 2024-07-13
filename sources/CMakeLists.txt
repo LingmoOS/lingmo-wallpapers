@@ -1,12 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
 project(unsplash-wallpapers)
 
-set(BACKGROUNDS
-	default.jpg
-	wallpaper-1.jpg
-	wallpaper-2.jpg
-	wallpaper-3.jpg
-	wallpaper-4.jpg
-)
+file(GLOB_RECURSE SRCS_R "*.jpg" "*.png")
+foreach(filepath ${SRCS_R})
+    string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/" "" filename ${filepath})
+    list(APPEND BACKGROUNDS ${filename})
+endforeach()
 
 install(FILES ${BACKGROUNDS} DESTINATION /usr/share/backgrounds/lingmoos)
