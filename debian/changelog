@@ -1,3 +1,11 @@
+lingmo-wallpapers (3.0.0) helium; urgency=medium
+
+  [Lingmo OS Team]
+  * Use symlink on default wallpaper
+  * Remove some wallpapers
+
+ -- Lingmo OS Team <team@lingmo.org>  Sat, 19 Apr 2025 23:17:32 +0800
+
 lingmo-wallpapers (3.0.0~rc1) helium; urgency=medium
 
   [Lingmo OS Team]
