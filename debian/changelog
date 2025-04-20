@@ -1,3 +1,10 @@
+lingmo-wallpapers (3.0.1) helium; urgency=medium
+
+  [Lingmo OS Team]
+  * Rename and remove some wallpapers
+
+ -- Lingmo OS Team <team@lingmo.org>  Sun, 20 Apr 2025 20:54:13 +0800
+
 lingmo-wallpapers (3.0.0) helium; urgency=medium
 
   [Lingmo OS Team]
